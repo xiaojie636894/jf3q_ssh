@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+</head>
+<body>
+	<table align="center" style="margin-top: 100px;">
+		<tr>
+			<td><img src="404.jpg" style="width: 200px; margin-right: 20px"></td>
+			<td>
+				<h1>
+					页面找不到了,<span id="ts">10</span>s后&nbsp;<a href="index_index.do">返回<a>&nbsp;首页
+				</h1>
+				<h4>&nbsp;<a href="login_login.do">返回管理员登陆页面<a></h4>
+			</td>
+		</tr>
+	</table>
+</body>
+<script type="text/javascript">
+var ts=10;
+var seti=setInterval(function(){
+	ts--;
+	document.getElementById("ts").innerHTML=ts;
+	if(ts<1){
+		clearInterval(seti);
+		window.location="index_index.do";
+	}
+}, 1000);
+</script>
+</html>

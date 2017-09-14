@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hysd.domain">
+	<class name="Price" table="price">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="pid" column="pid" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="priceUnit" column="priceUnit" type="double" />
+		<property name="pname" column="pname" type="string" />
+		<set name="goods"  lazy="true" inverse="true" cascade="save-update,delete" fetch="join">
+			<cache usage="read-write" /> <!-- 缓存 -->
+			<key column="pid" />
+			<one-to-many class="Goods" />
+		</set>
+	</class>
+</hibernate-mapping>

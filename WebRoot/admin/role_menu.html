@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<meta name="renderer" content="webkit">
+		<title></title>
+		<link rel="stylesheet" href="css/pintuer.css">
+		<link rel="stylesheet" href="css/admin.css">
+		<script src="js/jquery.js"></script>
+		<script src="js/pintuer.js"></script>
+		
+		<style>
+			.menus{
+				padding: 20px 20px;
+			}.menus_item{
+				padding: 5px 5px;
+				line-height: 20px;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<form method="post" action="" id="listform">
+			<div class="panel admin-panel">
+				<div class="panel-head"><strong class="icon-reorder"> 分配权限</strong>
+					<a href="" style="float:right; display:none;">添加字段</a>
+				</div>
+				<div class="padding border-bottom">
+					<ul class="search" style="padding-left:10px;">
+						<li>
+							<select name="s_ishome" class="input"   style="width:260px; line-height:17px; display:inline-block">
+					            <option value="">选择</option>
+					            <option value="1">系统管理员</option>
+					            <option value="0">订单管理员</option>
+					        </select>
+							<a href="javascript:void(0)" class="button border-main icon-search" > 确定</a>
+						</li>
+					</ul>
+				</div>
+				
+				<div class="menus">
+					<div class="menus_item">
+						<div class="menu_first"><input type="checkbox" />系统管理</div>
+						<ul  class="menu_second">
+							<li><input type="checkbox" />角色管理</li>
+							<li><input type="checkbox" />权限管理</li>
+							<li><input type="checkbox" />权限分配</li>
+							<li><input type="checkbox" />客服管理</li>
+						</ul>
+					</div>
+					
+					<div class="menus_item">
+						<div class="menu_first"><input type="checkbox" />系统管理</div>
+						<ul  class="menu_second">
+							<li><input type="checkbox" />角色管理</li>
+							<li><input type="checkbox" />权限管理</li>
+							<li><input type="checkbox" />权限分配</li>
+							<li><input type="checkbox" />客服管理</li>
+						</ul>
+					</div>
+					 
+					
+					
+				</div>
+				
+				
+				<div class="form-group" style="margin-left: 20px;">
+					<div class="label">
+						<label></label>
+					</div>
+					<div class="field">
+						<button class="button bg-main icon-check-square-o" type="submit"> 分配权限</button>
+					</div>
+				</div>
+				<br><br><br>
+			</div>
+			
+
+			
+		</form>
+		<script type="text/javascript">
+			$('.menus').on("dblclick",".menu_first",function(){
+				if($(this).next().is(":hidden"))$(this).next().show();
+				else $(this).next().hide();
+			});
+			
+			$('.menus').on("click",".menu_first input[type='checkbox']",function(){
+				if($(this).is(':checked'))$(this).parent().next().find("input[type='checkbox']").attr("checked", true);
+				else $(this).parent().next().find("input[type='checkbox']").attr("checked", false);
+			});
+		</script>
+	</body>
+
+</html>

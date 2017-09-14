@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hysd.domain">
+	<class name="CmgLog" table="cmgLog">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="cmid" column="cmid" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="cmts" column="cmts"   type="string" />
+		<property name="content" column="content"   type="string" />
+		<property name="type" column="type"   type="integer" />
+	 	 
+	</class>
+</hibernate-mapping>

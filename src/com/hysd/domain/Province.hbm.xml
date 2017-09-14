@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hysd.domain">
+	<class name="Province" table="province">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="provinceId" column="provinceId" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="provinceName" column="provinceName"   type="string" />
+		<many-to-one name="country" class="Country" column="countryId" />
+		<set name="cities"  lazy="true" inverse="true" cascade="save-update,delete" fetch="join">
+			<cache usage="read-write" /> <!-- 缓存 -->
+			<key column="provinceId" />
+			<one-to-many class="City" />
+		</set>
+	</class>
+</hibernate-mapping>

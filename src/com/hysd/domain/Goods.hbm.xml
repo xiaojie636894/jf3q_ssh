@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hysd.domain">
+	<class name="Goods" table="goods">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="gid" column="gid" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="gname" column="gname" type="string" />
+		<many-to-one name="directory2" class="Directory2" column="ddid" />
+		<many-to-one name="price" class="Price" column="pid"></many-to-one>
+		<property name="priceValue" column="priceValue" type="double" />
+		<property name="special" column="special" type="integer" />
+		<property name="status" column="status" type="integer" />
+		<property name="cts" column="cts" type="string" />
+		<property name="img" column="img" type="string" />
+		<property name="orderby" column="orderby" type="integer" />
+		<property name="norms" column="norms" type="string" />
+		<property name="vipPrice" column="vipPrice" type="double" />
+		<property name="specialPrice" column="specialPrice" type="double" />
+		<property name="store" column="store" type="integer" />
+		<property name="address" column="address" type="string" />
+		<property name="gparam" column="gparam" type="string" />
+		<property name="isPost" column="isPost" type="integer" />
+		<property name="postMoney" column="postMoney" type="double" />
+		<property name="putawayTs" column="putawayTs" type="string" />
+		<property name="soldoutTs" column="soldoutTs" type="string" />
+		<property name="soldNum" column="soldNum" type="integer" />
+		<property name="lessMoney" column="lessMoney" type="double" />
+		<property name="associated" column="associated" type="integer" />
+		<property name="postDesc" column="postDesc" type="string" />
+	</class>
+</hibernate-mapping>

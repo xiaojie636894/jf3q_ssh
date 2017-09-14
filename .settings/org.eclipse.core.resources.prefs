@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//WebRoot/admin=UTF-8
+encoding//WebRoot/admin/directory_update.jsp=UTF-8
+encoding//WebRoot/admin/index.jsp=UTF-8
+encoding//WebRoot/admin/login.jsp=UTF-8
+encoding//WebRoot/admin/page.jsp=UTF-8
+encoding//WebRoot/admin/role_add.jsp=UTF-8
+encoding//WebRoot/admin/role_update.jsp=UTF-8
+encoding//WebRoot/jsp=UTF-8
+encoding//WebRoot/jsp/common.jsp=UTF-8
+encoding//WebRoot/jsp/login.jsp=UTF-8
+encoding//src/com/hysd/util/DateUtils.java=UTF-8
+encoding/src=UTF-8
+encoding/test=UTF-8

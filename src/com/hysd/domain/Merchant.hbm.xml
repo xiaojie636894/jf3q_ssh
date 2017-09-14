@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hysd.domain">
+	<class name="Merchant" table="merchant">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="mid" column="mid" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="mobile" column="mobile"   type="string" />
+		<property name="pwd" column="pwd"   type="string" />
+		<property name="name" column="name"   type="string" />
+		<property name="status" column="status"   type="integer" />
+		<property name="faceimg" column="faceimg"   type="string" />
+		<property name="cts" column="cts"   type="string" />
+	 	<many-to-one name="role" class="Role" column="rid" /> 
+	</class>
+</hibernate-mapping>

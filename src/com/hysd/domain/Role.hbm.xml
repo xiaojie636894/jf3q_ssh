@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hysd.domain">
+	<class name="Role" table="role">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="rid" column="rid" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="rname" column="rname"   type="string" />
+		<property name="cts" column="cts"   type="string" />
+		<set name="merchant"  lazy="true" inverse="true" cascade="save-update,delete" fetch="join">
+			<cache usage="read-write" /> <!-- 缓存 -->
+			<key column="rid" />
+			<one-to-many class="Merchant" />
+		</set> 
+	</class>
+</hibernate-mapping>

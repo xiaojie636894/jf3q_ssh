@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.hysd.domain">
+	<class name="City" table="city">
+		<cache usage="read-write" /> <!-- 缓存 -->
+		<id name="cityId" column="cityId" type="integer">
+			<generator class="increment" />
+		</id>
+		<property name="cityName" column="cityName" type="string" />
+		<many-to-one name="province" class="Province" column="provinceId"></many-to-one>
+	</class>
+</hibernate-mapping>
